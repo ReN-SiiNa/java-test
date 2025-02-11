@@ -1,9 +1,12 @@
 pipeline {
     agent any
+
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-username/java-ci-jenkins.git'
+                git branch: 'main', 
+                    credentialsId: 'github', 
+                    url: 'https://github.com/ReN-SiiNa/java-test.git'
             }
         }
         stage('Compile Java Code') {
